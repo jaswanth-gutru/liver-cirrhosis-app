@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Liver Cirrhosis Prediction</title>
+</head>
+<body>
+    <h2>Liver Cirrhosis Prediction</h2>
+    <form method="POST">
+        <label>Age:</label><br>
+        <input type="text" name="age" required><br><br>
+
+        <label>Total Bilirubin:</label><br>
+        <input type="text" name="tb" required><br><br>
+
+        <label>A/G Ratio:</label><br>
+        <input type="text" name="ag" required><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+    <br>
+    {% if result %}
+        <h3>Prediction: {{ result }}</h3>
+    {% endif %}
+
+    <p><a href="{{ url_for('history') }}">View Prediction History</a> | <a href="{{ url_for('logout') }}">Logout</a></p>
+</body>
+</html>

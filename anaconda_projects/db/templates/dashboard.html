@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f1f8e9;
+            text-align: center;
+            padding: 40px;
+        }
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 90%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #8bc34a;
+            color: white;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        a {
+            margin-top: 20px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prediction History</h1>
+    <table>
+        <tr>
+            <th>Age</th>
+            <th>Total Bilirubin</th>
+            <th>A/G Ratio</th>
+            <th>Result</th>
+            <th>Timestamp</th>
+        </tr>
+        {% for row in history %}
+        <tr>
+            <td>{{ row[0] }}</td>
+            <td>{{ row[1] }}</td>
+            <td>{{ row[2] }}</td>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[4] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">Back to Prediction</a> |
+    <a href="/logout">Logout</a>
+</body>
+</html>
+
